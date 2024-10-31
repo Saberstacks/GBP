@@ -35,13 +35,13 @@
 
     <!-- Action Buttons -->
     <div class="action-buttons">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
         Directions
       </button>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
         Share
       </button>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
         Call
       </button>
     </div>
@@ -64,143 +64,123 @@
 
       <!-- Overview Panel -->
       <div class="mdl-tabs__panel is-active" id="overview-panel">
-        <!-- Field Rows -->
-        <div class="field-row">
-          <!-- Left Column: Input Field and Update Button -->
-          <div class="field-left">
-            <label for="description-input">Business Description</label>
-            <div class="input-group">
-              <input type="text" id="description-input" placeholder="Enter new description">
-              <button class="update-button mdl-button mdl-js-button mdl-button--icon">
-                <i class="material-icons">update</i>
-              </button>
-            </div>
-          </div>
-          <!-- Right Column: Displayed Data -->
-          <div class="field-right">
-            <label>Business Description</label>
+        <div class="content-container">
+          <!-- Left Section (Final Data) -->
+          <div class="left-section">
+            <h4>Business Description</h4>
             <p>Sunshine Bakery offers fresh, homemade pastries, cakes, and seasonal treats. Enjoy a cozy atmosphere with locally sourced coffee and gluten-free options available.</p>
-          </div>
-        </div>
 
-        <!-- Offers -->
-        <div class="field-row">
-          <div class="field-left">
-            <label for="offers-input">Offers</label>
-            <div class="input-group">
-              <textarea id="offers-input" placeholder="Enter new offers"></textarea>
-              <button class="update-button mdl-button mdl-js-button mdl-button--icon">
-                <i class="material-icons">update</i>
-              </button>
-            </div>
-          </div>
-          <div class="field-right">
-            <label>Current Offers</label>
+            <h4>Current Offers</h4>
             <ul>
               <li>Buy One Get One Free on select pastries (valid until 2024-11-01)</li>
               <li>20% off coffee for students (valid until 2024-12-31)</li>
             </ul>
-          </div>
-        </div>
 
-        <!-- Products -->
-        <div class="field-row">
-          <div class="field-left">
-            <label for="products-input">Products</label>
-            <div class="input-group">
-              <textarea id="products-input" placeholder="Enter new products"></textarea>
-              <button class="update-button mdl-button mdl-js-button mdl-button--icon">
-                <i class="material-icons">update</i>
-              </button>
-            </div>
-          </div>
-          <div class="field-right">
-            <label>Products</label>
+            <h4>Products</h4>
             <ul>
               <li>Chocolate Croissant: $3.50 USD</li>
               <li>Pumpkin Spice Latte (Limited): $5.00 USD</li>
             </ul>
           </div>
+
+          <!-- Right Section (Input Fields) -->
+          <div class="right-section">
+            <h4>Update Business Description</h4>
+            <div class="field-group">
+              <input type="text" placeholder="Enter new description">
+              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Update
+              </button>
+            </div>
+
+            <h4>Update Offers</h4>
+            <div class="field-group">
+              <input type="text" placeholder="Enter new offers">
+              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Update
+              </button>
+            </div>
+
+            <h4>Update Products</h4>
+            <div class="field-group">
+              <input type="text" placeholder="Enter new products">
+              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Update
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Implement similar structures for other panels (Reviews, Business Details, etc.) -->
-      <!-- For brevity, I'll show the structure for the Business Details panel -->
+      <!-- Similar structure for other panels -->
+      <!-- Reviews Panel -->
+      <div class="mdl-tabs__panel" id="reviews-panel">
+        <div class="content-container">
+          <!-- Left Section (Final Data) -->
+          <div class="left-section">
+            <h4>Reviews</h4>
+            <div class="review">
+              <p><strong>John Doe</strong> - 5 stars</p>
+              <p>"Amazing pastries!"</p>
+            </div>
+            <div class="review">
+              <p><strong>Jane Smith</strong> - 3 stars</p>
+              <p>"Coffee was okay but overpriced."</p>
+            </div>
+          </div>
+
+          <!-- Right Section (Input Fields) -->
+          <div class="right-section">
+            <h4>Write a Review</h4>
+            <div class="field-group">
+              <input type="text" placeholder="Your review">
+              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Business Details Panel -->
       <div class="mdl-tabs__panel" id="details-panel">
-        <!-- Business Name -->
-        <div class="field-row">
-          <div class="field-left">
-            <label for="business-name-input">Business Name</label>
-            <div class="input-group">
-              <input type="text" id="business-name-input" placeholder="Enter new business name">
-              <button class="update-button mdl-button mdl-js-button mdl-button--icon">
-                <i class="material-icons">update</i>
+        <div class="content-container">
+          <!-- Left Section (Final Data) -->
+          <div class="left-section">
+            <h4>Business Details</h4>
+            <p><strong>Business Name:</strong> Sunshine Bakery</p>
+            <p><strong>Place ID:</strong> ChIJN1t_tDeuEmsRUsoyG83frY4</p>
+            <p><strong>Business Type:</strong> Bakery</p>
+            <p><strong>Categories:</strong> Bakery, Cafe, Dessert Shop</p>
+          </div>
+
+          <!-- Right Section (Input Fields) -->
+          <div class="right-section">
+            <h4>Update Business Details</h4>
+            <div class="field-group">
+              <label>Business Name:</label>
+              <input type="text" placeholder="Enter new business name">
+              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Update
               </button>
             </div>
-          </div>
-          <div class="field-right">
-            <label>Business Name</label>
-            <p>Sunshine Bakery</p>
-          </div>
-        </div>
-
-        <!-- Place ID -->
-        <div class="field-row">
-          <div class="field-left">
-            <label for="place-id-input">Place ID</label>
-            <div class="input-group">
-              <input type="text" id="place-id-input" placeholder="Enter new Place ID">
-              <button class="update-button mdl-button mdl-js-button mdl-button--icon">
-                <i class="material-icons">update</i>
+            <div class="field-group">
+              <label>Place ID:</label>
+              <input type="text" placeholder="Enter new Place ID">
+              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                Update
               </button>
             </div>
-          </div>
-          <div class="field-right">
-            <label>Place ID</label>
-            <p>ChIJN1t_tDeuEmsRUsoyG83frY4</p>
+            <!-- Repeat for other fields -->
           </div>
         </div>
-
-        <!-- Business Type -->
-        <div class="field-row">
-          <div class="field-left">
-            <label for="business-type-input">Business Type</label>
-            <div class="input-group">
-              <input type="text" id="business-type-input" placeholder="Enter new business type">
-              <button class="update-button mdl-button mdl-js-button mdl-button--icon">
-                <i class="material-icons">update</i>
-              </button>
-            </div>
-          </div>
-          <div class="field-right">
-            <label>Business Type</label>
-            <p>Bakery</p>
-          </div>
-        </div>
-
-        <!-- Categories -->
-        <div class="field-row">
-          <div class="field-left">
-            <label for="categories-input">Categories</label>
-            <div class="input-group">
-              <input type="text" id="categories-input" placeholder="Enter new categories">
-              <button class="update-button mdl-button mdl-js-button mdl-button--icon">
-                <i class="material-icons">update</i>
-              </button>
-            </div>
-          </div>
-          <div class="field-right">
-            <label>Categories</label>
-            <p>Bakery, Cafe, Dessert Shop</p>
-          </div>
-        </div>
-
-        <!-- Continue with other data points in Business Details panel -->
       </div>
 
-      <!-- Implement similar structures for other panels (Website, Service Areas, Hours, Photos, Services, Insights, Posts, Q&A) -->
+      <!-- Repeat similar structure for other panels -->
+      <!-- (Website, Service Areas, Hours, Photos, Services, Insights, Posts, Q&A) -->
+
+      <!-- For brevity, only the Overview, Reviews, and Business Details panels are fully fleshed out here. -->
+      <!-- You can replicate the structure for the remaining panels, replacing the content accordingly. -->
 
     </div>
 
