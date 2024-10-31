@@ -65,40 +65,53 @@
       <!-- Overview Panel -->
       <div class="mdl-tabs__panel is-active" id="overview-panel">
         <!-- Description -->
-        <p class="description">
-          Sunshine Bakery offers fresh, homemade pastries, cakes, and seasonal treats. Enjoy a cozy atmosphere with locally sourced coffee and gluten-free options available.
-        </p>
+        <div class="field-group">
+          <label for="description">Business Description:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <input type="text" id="description" value="Sunshine Bakery offers fresh, homemade pastries, cakes, and seasonal treats. Enjoy a cozy atmosphere with locally sourced coffee and gluten-free options available.">
+          </div>
+        </div>
 
         <!-- Offers -->
-        <div class="offers-section">
-          <h4>Current Offers</h4>
-          <ul>
-            <li>Buy One Get One Free on select pastries (valid until 2024-11-01)</li>
-            <li>20% off coffee for students (valid until 2024-12-31)</li>
-          </ul>
+        <h4>Current Offers</h4>
+        <div class="field-group">
+          <label for="offers">Offers:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <textarea id="offers">- Buy One Get One Free on select pastries (valid until 2024-11-01)
+- 20% off coffee for students (valid until 2024-12-31)</textarea>
+          </div>
         </div>
 
         <!-- Products -->
-        <div class="products-section">
-          <h4>Products</h4>
-          <ul>
-            <li>Chocolate Croissant: $3.50 USD</li>
-            <li>Pumpkin Spice Latte (Limited): $5.00 USD</li>
-          </ul>
+        <h4>Products</h4>
+        <div class="field-group">
+          <label for="products">Products:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <textarea id="products">- Chocolate Croissant: $3.50 USD
+- Pumpkin Spice Latte (Limited): $5.00 USD</textarea>
+          </div>
         </div>
       </div>
 
       <!-- Reviews Panel -->
       <div class="mdl-tabs__panel" id="reviews-panel">
-        <div class="reviews">
-          <div class="review">
-            <p><strong>John Doe</strong> - 5 stars</p>
-            <p>"Amazing pastries!"</p>
-          </div>
-          <div class="review">
-            <p><strong>Jane Smith</strong> - 3 stars</p>
-            <p>"Coffee was okay but overpriced."</p>
-          </div>
+        <h4>Reviews</h4>
+        <div class="review">
+          <p><strong>John Doe</strong> - 5 stars</p>
+          <p>"Amazing pastries!"</p>
+        </div>
+        <div class="review">
+          <p><strong>Jane Smith</strong> - 3 stars</p>
+          <p>"Coffee was okay but overpriced."</p>
         </div>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
           Write a review
@@ -107,127 +120,209 @@
 
       <!-- Business Details Panel -->
       <div class="mdl-tabs__panel" id="details-panel">
-        <div class="details">
-          <div class="detail-item">
-            <span class="material-icons">business</span>
-            <span>Sunshine Bakery</span>
+        <h4>Business Details</h4>
+        <div class="field-group">
+          <label for="business_name">Business Name:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <input type="text" id="business_name" value="Sunshine Bakery">
           </div>
-          <div class="detail-item">
-            <span class="material-icons">place</span>
-            <span>123 Main St, Springfield, IL 62701, USA</span>
+        </div>
+        <div class="field-group">
+          <label for="place_id">Place ID:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <input type="text" id="place_id" value="ChIJN1t_tDeuEmsRUsoyG83frY4">
           </div>
-          <div class="detail-item">
-            <span class="material-icons">map</span>
-            <span>Latitude: 39.7817, Longitude: -89.6501</span>
+        </div>
+        <div class="field-group">
+          <label for="business_type">Business Type:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <input type="text" id="business_type" value="Bakery">
           </div>
-          <div class="detail-item">
-            <span class="material-icons">event</span>
-            <span>Business Opened On: 2010-05-14</span>
-          </div>
-          <div class="detail-item">
-            <span class="material-icons">check_circle</span>
-            <span>Status: Open</span>
+        </div>
+        <div class="field-group">
+          <label for="categories">Categories:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <input type="text" id="categories" value="Bakery, Cafe, Dessert Shop">
           </div>
         </div>
       </div>
 
       <!-- Website Panel -->
       <div class="mdl-tabs__panel" id="website-panel">
-        <p>
-          Visit our website: <a href="https://www.sunshinebakery.com" target="_blank">www.sunshinebakery.com</a>
-        </p>
-        <p>
-          Email us at: <a href="mailto:info@sunshinebakery.com">info@sunshinebakery.com</a>
-        </p>
-        <p>
-          Book a reservation: <a href="https://book.sunshinebakery.com/reservations" target="_blank">Book Now</a>
-        </p>
+        <h4>Website & Contact</h4>
+        <div class="field-group">
+          <label for="website">Website:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <input type="text" id="website" value="https://www.sunshinebakery.com">
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="email">Email:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <input type="email" id="email" value="info@sunshinebakery.com">
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="booking_link">Booking Link:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <input type="text" id="booking_link" value="https://book.sunshinebakery.com/reservations">
+          </div>
+        </div>
       </div>
 
       <!-- Service Areas Panel -->
       <div class="mdl-tabs__panel" id="service-areas-panel">
         <h4>Service Areas</h4>
-        <ul>
-          <li>Springfield, IL</li>
-          <li>Chatham, IL</li>
-          <li>Decatur, IL</li>
-        </ul>
+        <div class="field-group">
+          <label for="service_areas">Service Areas:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <textarea id="service_areas">- Springfield, IL
+- Chatham, IL
+- Decatur, IL</textarea>
+          </div>
+        </div>
       </div>
 
       <!-- Hours Panel -->
       <div class="mdl-tabs__panel" id="hours-panel">
         <h4>Operating Hours</h4>
-        <ul>
-          <li>Monday - Thursday: 07:00 - 18:00</li>
-          <li>Friday: 07:00 - 20:00</li>
-          <li>Saturday: 08:00 - 16:00</li>
-          <li>Sunday: Closed</li>
-        </ul>
+        <div class="field-group">
+          <label for="hours">Regular Hours:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <textarea id="hours">- Monday - Thursday: 07:00 - 18:00
+- Friday: 07:00 - 20:00
+- Saturday: 08:00 - 16:00
+- Sunday: Closed</textarea>
+          </div>
+        </div>
         <h4>Holiday Hours</h4>
-        <ul>
-          <li>Thanksgiving: 08:00 - 14:00</li>
-          <li>Christmas: Closed</li>
-        </ul>
+        <div class="field-group">
+          <label for="holiday_hours">Holiday Hours:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <textarea id="holiday_hours">- Thanksgiving: 08:00 - 14:00
+- Christmas: Closed</textarea>
+          </div>
+        </div>
       </div>
 
       <!-- Photos Panel -->
       <div class="mdl-tabs__panel" id="photos-panel">
         <h4>Photos</h4>
+        <div class="field-group">
+          <label for="photos">Photo URLs:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <textarea id="photos">- https://photos.google.com/sunshinebakery-front.jpg
+- https://photos.google.com/sunshinebakery-interior.jpg</textarea>
+          </div>
+        </div>
+        <!-- Display Photos -->
         <div class="photos-gallery">
           <img src="assets/placeholder.png" alt="Front View">
           <img src="assets/placeholder.png" alt="Interior">
-          <!-- Add more placeholders as needed -->
         </div>
       </div>
 
       <!-- Services Panel -->
       <div class="mdl-tabs__panel" id="services-panel">
         <h4>Attributes & Services</h4>
-        <ul>
-          <li>Wheelchair Accessible: Yes</li>
-          <li>Family Friendly: Yes</li>
-          <li>Pet Friendly: No</li>
-          <li>Payment Options: Cash, Credit Card, Mobile Payment</li>
-          <li>Delivery: Yes</li>
-          <li>Online Orders: Yes</li>
-        </ul>
+        <div class="field-group">
+          <label for="attributes">Attributes:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <textarea id="attributes">- Wheelchair Accessible: Yes
+- Family Friendly: Yes
+- Pet Friendly: No
+- Payment Options: Cash, Credit Card, Mobile Payment
+- Delivery: Yes
+- Online Orders: Yes</textarea>
+          </div>
+        </div>
       </div>
 
       <!-- Insights Panel -->
       <div class="mdl-tabs__panel" id="insights-panel">
         <h4>Insights (Last 30 Days)</h4>
-        <ul>
-          <li>Views: 1,450</li>
-          <li>Direct Queries: 500</li>
-          <li>Discovery Queries: 850</li>
-          <li>Branded Queries: 100</li>
-          <li>Website Visits: 300</li>
-          <li>Phone Calls: 45</li>
-          <li>Request Directions: 120</li>
-        </ul>
+        <div class="field-group">
+          <label for="insights">Insights Data:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <textarea id="insights">- Views: 1,450
+- Direct Queries: 500
+- Discovery Queries: 850
+- Branded Queries: 100
+- Website Visits: 300
+- Phone Calls: 45
+- Request Directions: 120</textarea>
+          </div>
+        </div>
       </div>
 
       <!-- Posts Panel -->
       <div class="mdl-tabs__panel" id="posts-panel">
         <h4>Latest Posts</h4>
-        <div class="post">
-          <p><strong>Pumpkin spice is back!</strong> (Valid until 2024-11-01)</p>
-        </div>
-        <div class="post">
-          <p><strong>Live music this Friday evening!</strong> (Expired 2024-10-27)</p>
+        <div class="field-group">
+          <label for="posts">Posts:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <textarea id="posts">- "Pumpkin spice is back!" (Valid until 2024-11-01)
+- "Live music this Friday evening!" (Expired 2024-10-27)</textarea>
+          </div>
         </div>
       </div>
 
       <!-- Q&A Panel -->
       <div class="mdl-tabs__panel" id="qa-panel">
         <h4>Questions & Answers</h4>
-        <div class="question">
-          <p><strong>Q:</strong> Gluten-free options?</p>
-          <p><strong>A:</strong> Yes</p>
-        </div>
-        <div class="question">
-          <p><strong>Q:</strong> Outdoor seating?</p>
-          <p><strong>A:</strong> Yes</p>
+        <div class="field-group">
+          <label for="questions_and_answers">Q&A:</label>
+          <div class="input-group">
+            <button class="update-button mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">edit</i>
+            </button>
+            <textarea id="questions_and_answers">- Q: Gluten-free options?
+  A: Yes
+- Q: Outdoor seating?
+  A: Yes</textarea>
+          </div>
         </div>
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
           Ask a question
