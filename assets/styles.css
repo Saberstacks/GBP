@@ -81,42 +81,50 @@ body {
 }
 
 .mdl-tabs__panel h4 {
-  margin-top: 0;
+  margin-top: 24px;
 }
 
-/* Description */
-.description {
-  font-size: 16px;
+/* Field Groups */
+.field-group {
+  display: flex;
+  align-items: center;
   margin-bottom: 16px;
 }
 
-/* Details */
-.details .detail-item {
+.field-group label {
+  flex: 1;
+  min-width: 150px;
+  font-weight: bold;
+}
+
+.input-group {
+  flex: 2;
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
 }
 
-.details .material-icons {
+.input-group .update-button {
   margin-right: 8px;
-  color: #757575;
 }
 
-/* Offers and Products */
-.offers-section ul,
-.products-section ul,
-.service-areas ul,
-.hours-panel ul,
-.services-panel ul,
-.insights-panel ul {
-  list-style-type: disc;
-  margin-left: 20px;
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
 }
 
-/* Photos Section */
+.input-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Photos Gallery */
 .photos-gallery {
   display: flex;
   overflow-x: auto;
+  margin-top: 16px;
 }
 
 .photos-gallery img {
@@ -135,24 +143,13 @@ body {
   margin-bottom: 8px;
 }
 
-/* Posts */
-.post {
-  background-color: #f9f9f9;
-  padding: 8px;
-  border-radius: 4px;
-  margin-bottom: 8px;
+/* Buttons */
+.update-button .material-icons {
+  color: #3f51b5;
 }
 
-/* Q&A */
-.qa-section .question {
-  background-color: #f9f9f9;
-  padding: 8px;
-  border-radius: 4px;
-  margin-bottom: 8px;
-}
-
-.qa-section button {
-  margin-top: 8px;
+.mdl-button--raised {
+  margin-top: 16px;
 }
 
 /* Footer */
