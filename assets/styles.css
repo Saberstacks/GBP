@@ -10,8 +10,7 @@ body {
 .dashboard-container {
   max-width: 1000px;
   margin: 0 auto;
-  background-color: #f5f5f5; /* Slightly grey background for content */
-  padding: 16px;
+  background-color: #f5f5f5; /* Slightly darker grey */
 }
 
 /* Business Header */
@@ -59,112 +58,117 @@ body {
   display: flex;
   justify-content: space-around;
   padding: 16px;
-  background-color: #cfd8dc; /* Light blue-grey */
+  background-color: #fafafa;
 }
 
 .action-buttons .mdl-button {
-  background-color: #546e7a; /* Blue-grey */
+  background-color: #3f51b5;
   color: #fff;
 }
 
 .action-buttons .mdl-button:hover {
-  background-color: #455a64; /* Darker blue-grey on hover */
+  background-color: #303f9f;
 }
 
 /* Tabs */
 .mdl-tabs__tab-bar {
-  background-color: #b0bec5; /* Blue-grey */
+  background-color: #e0e0e0;
   overflow-x: auto;
 }
 
 .mdl-tabs__tab {
-  color: #fff;
+  color: #333;
   white-space: nowrap;
 }
 
 .mdl-tabs__tab.is-active {
-  color: #eceff1;
+  color: #3f51b5;
 }
 
 .mdl-tabs__panel {
   padding: 16px;
 }
 
-.mdl-tabs__panel h4 {
-  margin-top: 24px;
+/* Content Container */
+.content-container {
+  display: flex;
+  gap: 16px;
 }
 
-/* Field Rows */
-.field-row {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 16px;
-  background-color: #eceff1; /* Light grey-blue */
+/* Left Section (Green) */
+.left-section {
+  flex: 1;
+  background-color: #e8f5e9; /* Light green */
   padding: 16px;
   border-radius: 4px;
 }
 
-.field-left,
-.field-right {
-  width: 48%;
-}
-
-.field-left label,
-.field-right label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.input-group {
-  display: flex;
-  align-items: center;
-}
-
-.input-group input[type="text"],
-.input-group textarea {
-  width: 100%;
-  padding: 8px;
-  font-size: 14px;
-  margin-right: 8px;
-  border: 1px solid #ccc;
+/* Right Section (Red) */
+.right-section {
+  flex: 1;
+  background-color: #ffebee; /* Light red */
+  padding: 16px;
   border-radius: 4px;
 }
 
-.input-group textarea {
+/* Field Groups */
+.field-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.field-group label {
+  flex: 1;
+  min-width: 100px;
+  font-weight: bold;
+}
+
+.field-group input[type="text"],
+.field-group textarea {
+  flex: 2;
+  padding: 8px;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.field-group textarea {
   resize: vertical;
   min-height: 60px;
 }
 
-.update-button .material-icons {
-  color: #2196F3; /* Blue */
+.update-button {
+  background-color: #3f51b5;
+  color: #fff;
 }
 
-.update-button:hover .material-icons {
-  color: #1976D2; /* Darker blue on hover */
+.update-button:hover {
+  background-color: #303f9f;
 }
 
-.field-right p,
-.field-right ul {
-  margin: 0;
-}
-
-.field-right ul {
-  padding-left: 20px;
-}
-
-.field-right li {
-  margin-bottom: 4px;
+/* Reviews */
+.review {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
 }
 
 /* Footer */
 .footer {
   padding: 16px;
   text-align: center;
-  background-color: #cfd8dc; /* Light blue-grey */
+  background-color: #fafafa;
 }
 
 .footer img {
   width: 24px;
   height: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+  }
 }
