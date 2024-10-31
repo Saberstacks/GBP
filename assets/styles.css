@@ -64,10 +64,12 @@ body {
 /* Tabs */
 .mdl-tabs__tab-bar {
   background-color: #f5f5f5;
+  overflow-x: auto;
 }
 
 .mdl-tabs__tab {
   color: #333;
+  white-space: nowrap;
 }
 
 .mdl-tabs__tab.is-active {
@@ -76,6 +78,10 @@ body {
 
 .mdl-tabs__panel {
   padding: 16px;
+}
+
+.mdl-tabs__panel h4 {
+  margin-top: 0;
 }
 
 /* Description */
@@ -96,11 +102,18 @@ body {
   color: #757575;
 }
 
-/* Photos Section */
-.photos-section {
-  margin-bottom: 16px;
+/* Offers and Products */
+.offers-section ul,
+.products-section ul,
+.service-areas ul,
+.hours-panel ul,
+.services-panel ul,
+.insights-panel ul {
+  list-style-type: disc;
+  margin-left: 20px;
 }
 
+/* Photos Section */
 .photos-gallery {
   display: flex;
   overflow-x: auto;
@@ -114,33 +127,7 @@ body {
   border-radius: 4px;
 }
 
-/* Q&A Section */
-.qa-section {
-  margin-bottom: 16px;
-}
-
-.qa-section .question {
-  background-color: #f9f9f9;
-  padding: 8px;
-  border-radius: 4px;
-  margin-bottom: 8px;
-}
-
-.qa-section a {
-  color: #3f51b5;
-}
-
-/* Popular Times */
-.popular-times img {
-  width: 100%;
-  border-radius: 4px;
-}
-
-/* Review Summary */
-.review-summary {
-  margin-bottom: 16px;
-}
-
+/* Reviews */
 .reviews .review {
   background-color: #f9f9f9;
   padding: 8px;
@@ -148,8 +135,24 @@ body {
   margin-bottom: 8px;
 }
 
-.reviews .review p {
-  margin: 4px 0;
+/* Posts */
+.post {
+  background-color: #f9f9f9;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+/* Q&A */
+.qa-section .question {
+  background-color: #f9f9f9;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.qa-section button {
+  margin-top: 8px;
 }
 
 /* Footer */
