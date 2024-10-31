@@ -19,6 +19,7 @@ body {
   padding: 16px;
   text-align: center;
   border-bottom: 1px solid #ddd;
+  position: relative;
 }
 
 .business-title {
@@ -80,6 +81,24 @@ body {
 .profile-views .material-icons {
   font-size: 20px;
   margin-right: 4px;
+}
+
+/* Mode Buttons */
+.mode-buttons {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.mode-button {
+  margin-left: 8px;
+  background-color: #4285f4;
+  color: #fff;
+  text-transform: none;
+}
+
+.mode-button:hover {
+  background-color: #357ae8;
 }
 
 /* Action Buttons */
@@ -155,32 +174,41 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
-.photos-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.photos-gallery img {
-  width: calc(33% - 8px);
-  height: 150px;
-  object-fit: cover;
+/* Editable Sections */
+.edit-section {
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.review,
-.qa-item,
-.post-item {
-  background-color: #ffffff;
-  padding: 12px;
-  border-radius: 4px;
-  margin-bottom: 8px;
+.field-group {
+  margin-bottom: 16px;
 }
 
-.review p,
-.qa-item p,
-.post-item p {
-  margin: 4px 0;
+.field-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.field-group input[type="text"],
+.field-group input[type="date"],
+.field-group textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.update-button {
+  background-color: #4285f4;
+  color: #fff;
+  text-transform: none;
+}
+
+.update-button:hover {
+  background-color: #357ae8;
 }
 
 /* Footer */
