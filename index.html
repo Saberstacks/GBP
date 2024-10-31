@@ -60,141 +60,186 @@
     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
       <div class="mdl-tabs__tab-bar">
         <a href="#overview-panel" class="mdl-tabs__tab is-active">Overview</a>
-        <a href="#reviews-panel" class="mdl-tabs__tab">Reviews</a>
-        <a href="#details-panel" class="mdl-tabs__tab">Business Details</a>
-        <a href="#website-panel" class="mdl-tabs__tab">Website</a>
-        <a href="#service-areas-panel" class="mdl-tabs__tab">Service Areas</a>
+        <a href="#location-panel" class="mdl-tabs__tab">Location</a>
+        <a href="#contact-panel" class="mdl-tabs__tab">Contact</a>
         <a href="#hours-panel" class="mdl-tabs__tab">Hours</a>
+        <a href="#offers-panel" class="mdl-tabs__tab">Offers</a>
+        <a href="#products-panel" class="mdl-tabs__tab">Products</a>
         <a href="#photos-panel" class="mdl-tabs__tab">Photos</a>
-        <a href="#services-panel" class="mdl-tabs__tab">Services</a>
-        <a href="#insights-panel" class="mdl-tabs__tab">Insights</a>
-        <a href="#posts-panel" class="mdl-tabs__tab">Posts</a>
+        <a href="#reviews-panel" class="mdl-tabs__tab">Reviews</a>
         <a href="#qa-panel" class="mdl-tabs__tab">Q&A</a>
+        <a href="#posts-panel" class="mdl-tabs__tab">Posts</a>
+        <a href="#insights-panel" class="mdl-tabs__tab">Insights</a>
       </div>
 
       <!-- Overview Panel -->
       <div class="mdl-tabs__panel is-active" id="overview-panel">
-        <div class="content-container">
-          <!-- Left Section (Final Data) -->
-          <div class="left-section">
-            <h4>Business Description</h4>
-            <p>Sunshine Bakery offers fresh, homemade pastries, cakes, and seasonal treats. Enjoy a cozy atmosphere with locally sourced coffee and gluten-free options available.</p>
+        <div class="content-section">
+          <h4>Business Overview</h4>
+          <p><strong>Business Name:</strong> Sunshine Bakery</p>
+          <p><strong>Business Type:</strong> Bakery</p>
+          <p><strong>Categories:</strong> Bakery, Cafe, Dessert Shop</p>
+          <p><strong>Description:</strong> Sunshine Bakery offers fresh, homemade pastries, cakes, and seasonal treats. Enjoy a cozy atmosphere with locally sourced coffee and gluten-free options available.</p>
+          <p><strong>Status:</strong> Open</p>
+          <p><strong>Business Opened On:</strong> 2010-05-14</p>
+        </div>
+      </div>
 
-            <h4>Current Offers</h4>
-            <ul>
-              <li>Buy One Get One Free on select pastries (valid until 2024-11-01)</li>
-              <li>20% off coffee for students (valid until 2024-12-31)</li>
-            </ul>
+      <!-- Location Panel -->
+      <div class="mdl-tabs__panel" id="location-panel">
+        <div class="content-section">
+          <h4>Location Details</h4>
+          <p><strong>Formatted Address:</strong> 123 Main St, Springfield, IL 62701, USA</p>
+          <p><strong>Street Address:</strong> 123 Main St</p>
+          <p><strong>City:</strong> Springfield</p>
+          <p><strong>State:</strong> IL</p>
+          <p><strong>Postal Code:</strong> 62701</p>
+          <p><strong>Country:</strong> USA</p>
+          <p><strong>Latitude:</strong> 39.7817</p>
+          <p><strong>Longitude:</strong> -89.6501</p>
+          <p><strong>Service Areas:</strong> Springfield, IL; Chatham, IL; Decatur, IL</p>
+        </div>
+      </div>
 
-            <h4>Products</h4>
-            <ul>
-              <li>Chocolate Croissant: $3.50 USD</li>
-              <li>Pumpkin Spice Latte (Limited): $5.00 USD</li>
-            </ul>
-          </div>
+      <!-- Contact Panel -->
+      <div class="mdl-tabs__panel" id="contact-panel">
+        <div class="content-section">
+          <h4>Contact Information</h4>
+          <p><strong>Phone Number:</strong> <a href="tel:+12175551234">+1 217-555-1234</a></p>
+          <p><strong>Website:</strong> <a href="https://www.sunshinebakery.com" target="_blank">www.sunshinebakery.com</a></p>
+          <p><strong>Email:</strong> <a href="mailto:info@sunshinebakery.com">info@sunshinebakery.com</a></p>
+          <p><strong>Booking Link:</strong> <a href="https://book.sunshinebakery.com/reservations" target="_blank">Book a Reservation</a></p>
+        </div>
+      </div>
 
-          <!-- Right Section (Input Fields) -->
-          <div class="right-section">
-            <h4>Update Business Description</h4>
-            <div class="field-group">
-              <input type="text" placeholder="Enter new description">
-              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                Update
-              </button>
-            </div>
+      <!-- Hours Panel -->
+      <div class="mdl-tabs__panel" id="hours-panel">
+        <div class="content-section">
+          <h4>Operating Hours</h4>
+          <table>
+            <tr><td>Monday - Thursday:</td><td>07:00 - 18:00</td></tr>
+            <tr><td>Friday:</td><td>07:00 - 20:00</td></tr>
+            <tr><td>Saturday:</td><td>08:00 - 16:00</td></tr>
+            <tr><td>Sunday:</td><td>Closed</td></tr>
+          </table>
+          <h4>Holiday Hours</h4>
+          <table>
+            <tr><td>Thanksgiving:</td><td>08:00 - 14:00</td></tr>
+            <tr><td>Christmas:</td><td>Closed</td></tr>
+          </table>
+        </div>
+      </div>
 
-            <h4>Update Offers</h4>
-            <div class="field-group">
-              <input type="text" placeholder="Enter new offers">
-              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                Update
-              </button>
-            </div>
+      <!-- Offers Panel -->
+      <div class="mdl-tabs__panel" id="offers-panel">
+        <div class="content-section">
+          <h4>Current Offers</h4>
+          <ul>
+            <li>Buy One Get One Free on select pastries (valid until 2024-11-01)</li>
+            <li>20% off coffee for students (valid until 2024-12-31)</li>
+          </ul>
+        </div>
+      </div>
 
-            <h4>Update Products</h4>
-            <div class="field-group">
-              <input type="text" placeholder="Enter new products">
-              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                Update
-              </button>
-            </div>
+      <!-- Products Panel -->
+      <div class="mdl-tabs__panel" id="products-panel">
+        <div class="content-section">
+          <h4>Products and Services</h4>
+          <ul>
+            <li>Chocolate Croissant: $3.50 USD</li>
+            <li>Pumpkin Spice Latte (Limited): $5.00 USD</li>
+          </ul>
+          <h4>Attributes</h4>
+          <ul>
+            <li>Wheelchair Accessible: Yes</li>
+            <li>Family Friendly: Yes</li>
+            <li>Pet Friendly: No</li>
+            <li>Payment Options: Cash, Credit Card, Mobile Payment</li>
+            <li>Delivery: Yes</li>
+            <li>Online Orders: Yes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Photos Panel -->
+      <div class="mdl-tabs__panel" id="photos-panel">
+        <div class="content-section">
+          <h4>Photos and Media</h4>
+          <div class="photos-gallery">
+            <img src="assets/placeholder.png" alt="Front View">
+            <img src="assets/placeholder.png" alt="Interior">
+            <!-- Add more images as needed -->
           </div>
         </div>
       </div>
 
       <!-- Reviews Panel -->
       <div class="mdl-tabs__panel" id="reviews-panel">
-        <div class="content-container">
-          <!-- Left Section (Final Data) -->
-          <div class="left-section">
-            <h4>Reviews</h4>
-            <div class="review">
-              <p><strong>John Doe</strong> - 5 stars</p>
-              <p>"Amazing pastries!"</p>
-            </div>
-            <div class="review">
-              <p><strong>Jane Smith</strong> - 3 stars</p>
-              <p>"Coffee was okay but overpriced."</p>
-            </div>
+        <div class="content-section">
+          <h4>Reviews and Ratings</h4>
+          <div class="review">
+            <p><strong>John Doe</strong> - 5 stars</p>
+            <p>"Amazing pastries!"</p>
           </div>
-
-          <!-- Right Section (Input Fields) -->
-          <div class="right-section">
-            <h4>Write a Review</h4>
-            <div class="field-group">
-              <input type="text" placeholder="Your review">
-              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                Submit
-              </button>
-            </div>
+          <div class="review">
+            <p><strong>Jane Smith</strong> - 3 stars</p>
+            <p>"Coffee was okay but overpriced."</p>
           </div>
+          <!-- Add more reviews as needed -->
         </div>
       </div>
 
-      <!-- Business Details Panel -->
-      <div class="mdl-tabs__panel" id="details-panel">
-        <div class="content-container">
-          <!-- Left Section (Final Data) -->
-          <div class="left-section">
-            <h4>Business Details</h4>
-            <p><strong>Business Name:</strong> Sunshine Bakery</p>
-            <p><strong>Place ID:</strong> ChIJN1t_tDeuEmsRUsoyG83frY4</p>
-            <p><strong>Business Type:</strong> Bakery</p>
-            <p><strong>Categories:</strong> Bakery, Cafe, Dessert Shop</p>
+      <!-- Q&A Panel -->
+      <div class="mdl-tabs__panel" id="qa-panel">
+        <div class="content-section">
+          <h4>Questions & Answers</h4>
+          <div class="qa-item">
+            <p><strong>Q:</strong> Gluten-free options?</p>
+            <p><strong>A:</strong> Yes</p>
           </div>
-
-          <!-- Right Section (Input Fields) -->
-          <div class="right-section">
-            <h4>Update Business Details</h4>
-            <div class="field-group">
-              <label>Business Name:</label>
-              <input type="text" placeholder="Enter new business name">
-              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                Update
-              </button>
-            </div>
-            <div class="field-group">
-              <label>Place ID:</label>
-              <input type="text" placeholder="Enter new Place ID">
-              <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-                Update
-              </button>
-            </div>
-            <!-- Repeat for other fields -->
+          <div class="qa-item">
+            <p><strong>Q:</strong> Outdoor seating?</p>
+            <p><strong>A:</strong> Yes</p>
           </div>
+          <!-- Add more Q&A as needed -->
         </div>
       </div>
 
-      <!-- Website Panel -->
-      <!-- Similar structure as above panels -->
-      <!-- Continue adding other panels with the same structure -->
-
-      <!-- Footer with Social Profiles -->
-      <div class="footer">
-        <a href="#" target="_blank">
-          <img src="assets/placeholder.png" alt="Instagram">
-        </a>
+      <!-- Posts Panel -->
+      <div class="mdl-tabs__panel" id="posts-panel">
+        <div class="content-section">
+          <h4>Posts and Updates</h4>
+          <div class="post-item">
+            <p><strong>"Pumpkin spice is back!"</strong> (Valid until 2024-11-01)</p>
+          </div>
+          <div class="post-item">
+            <p><strong>"Live music this Friday evening!"</strong> (Expired 2024-10-27)</p>
+          </div>
+          <!-- Add more posts as needed -->
+        </div>
       </div>
+
+      <!-- Insights Panel -->
+      <div class="mdl-tabs__panel" id="insights-panel">
+        <div class="content-section">
+          <h4>Insights and Analytics</h4>
+          <ul>
+            <li>Views (last 30 days): 1,450</li>
+            <li>Direct Queries: 500</li>
+            <li>Discovery Queries: 850</li>
+            <li>Branded Queries: 100</li>
+            <li>Website Visits: 300</li>
+            <li>Phone Calls: 45</li>
+            <li>Request Directions: 120</li>
+          </ul>
+          <!-- In a real implementation, this section could include charts and graphs -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2024 Sunshine Bakery</p>
     </div>
   </div>
 
