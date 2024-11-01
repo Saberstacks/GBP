@@ -1,0 +1,64 @@
+// assets/mockData.json
+
+{
+  "business_name": "Sunshine Bakery",
+  "business_type": "Bakery",
+  "categories": "Bakery, Cafe, Dessert Shop",
+  "description": "Sunshine Bakery offers fresh, homemade pastries, cakes, and seasonal treats. Enjoy a cozy atmosphere with locally sourced coffee and gluten-free options available.",
+  "status": "Open",
+  "business_opened_on": "2010-05-14",
+  "formatted_address": "123 Main St, Springfield, IL 62701, USA",
+  "street_address": "123 Main St",
+  "city": "Springfield",
+  "state": "IL",
+  "postal_code": "62701",
+  "country": "USA",
+  "latitude": "39.7817",
+  "longitude": "-89.6501",
+  "service_areas": "Springfield, IL; Chatham, IL; Decatur, IL",
+  "phone_number": "+1 217-555-1234",
+  "website": "www.sunshinebakery.com",
+  "email": "info@sunshinebakery.com",
+  "booking_link": "Book a Reservation",
+  "mon_thu": "07:00 - 18:00",
+  "friday": "07:00 - 20:00",
+  "saturday": "08:00 - 16:00",
+  "sunday": "Closed",
+  "thanksgiving": "08:00 - 14:00",
+  "christmas": "Closed",
+  "offers": [
+    "Buy One Get One Free on select pastries (valid until 2024-11-01)",
+    "20% off coffee for students (valid until 2024-12-31)"
+  ],
+  "products": [
+    "Chocolate Croissant: $3.50 USD",
+    "Pumpkin Spice Latte (Limited): $5.00 USD"
+  ],
+  "attributes": [
+    "Wheelchair Accessible: Yes",
+    "Family Friendly: Yes",
+    "Pet Friendly: No",
+    "Payment Options: Cash, Credit Card, Mobile Payment",
+    "Delivery: Yes",
+    "Online Orders: Yes"
+  ],
+  "reviews": [
+    "John Doe - 5 stars\n\"Amazing pastries!\"",
+    "Jane Smith - 3 stars\n\"Coffee was okay but overpriced.\""
+  ],
+  "qa": [
+    "Q: Gluten-free options?\nA: Yes",
+    "Q: Outdoor seating?\nA: Yes"
+  ],
+  "posts": [
+    "\"Pumpkin spice is back!\" (Valid until 2024-11-01)",
+    "\"Live music this Friday evening!\" (Expired 2024-10-27)"
+  ],
+  "views": 1450,
+  "direct_queries": 500,
+  "discovery_queries": 850,
+  "branded_queries": 100,
+  "website_visits": 300,
+  "phone_calls": 45,
+  "request_directions": 120
+}
