@@ -15,6 +15,13 @@
 </head>
 <body>
 
+  <!-- Authentication Check Script -->
+  <script>
+    if (!document.cookie.includes('token=')) {
+      window.location.href = '/login.html';
+    }
+  </script>
+
   <!-- Dashboard Container -->
   <div class="dashboard-container">
     <!-- Header Section -->
@@ -498,4 +505,4 @@
     <!-- Custom JS -->
     <script defer src="assets/scripts.js"></script>
   </body>
-  </html>
+</html>
