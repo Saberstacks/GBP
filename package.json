@@ -1,6 +1,11 @@
 {
+  "name": "sunshine-bakery-dashboard",
+  "version": "1.0.0",
   "dependencies": {
     "googleapis": "^105.0.0",
     "cookie": "^0.4.2"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
