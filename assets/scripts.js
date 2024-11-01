@@ -1,4 +1,60 @@
 // assets/scripts.js
+// assets/scripts.js
+
+document.addEventListener('DOMContentLoaded', async () => {
+  // Check authentication
+  if (!document.cookie.includes('token=')) {
+    window.location.href = '/login.html';
+    return;
+  }
+
+  // Fetch data from the backend API
+  let data;
+
+  try {
+    const response = await fetch('/api/data');
+    data = await response.json();
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    alert('Failed to load data.');
+    return;
+  }
+
+  // Rest of your existing code, using 'data' as the data object
+  // Load data from localStorage if available
+  if (localStorage.getItem('businessData')) {
+    data = JSON.parse(localStorage.getItem('businessData'));
+  }
+
+  // Function to display data in Preview mode
+  function displayData() {
+    // Update the code to use 'data' fetched from the API
+    // Your existing displayData() function code
+    // ...
+  }
+
+  // Function to populate Edit fields
+  function populateEditFields() {
+    // Your existing populateEditFields() function code
+    // ...
+  }
+
+  // Existing functions: toggleMode(), updateOverview(), etc.
+  // Ensure these functions use the 'data' object
+
+  // Event listeners for mode buttons
+  document.getElementById('editButton').addEventListener('click', () => {
+    toggleMode(true);
+  });
+
+  document.getElementById('previewButton').addEventListener('click', () => {
+    toggleMode(false);
+  });
+
+  // Initial display
+  displayData();
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // Data Object
