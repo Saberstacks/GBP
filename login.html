@@ -1,0 +1,30 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Sunshine Bakery Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Welcome to Sunshine Bakery Dashboard</h1>
+    <button class="google-button" onclick="startAuth()">Sign in with Google</button>
+  </div>
+
+  <script>
+    function startAuth() {
+      const clientId = 'YOUR_CLIENT_ID'; // Replace with your actual client ID
+      const redirectUri = window.location.origin + '/api/auth';
+      const scope = 'https://www.googleapis.com/auth/business.manage';
+      const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${encodeURIComponent(scope)}&access_type=offline&prompt=consent`;
+
+      window.location.href = authUrl;
+    }
+  </script>
+</body>
+</html>
