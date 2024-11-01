@@ -1,3 +1,16 @@
+// vercel.json
+
+{
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" }
+  ],
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs16.x"
+    }
+  }
+}
+
 {
   "version": 2,
   "builds": [
