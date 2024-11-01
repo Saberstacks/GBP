@@ -3,28 +3,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login - Sunshine Bakery Dashboard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/styles.css">
+  <title>Login - Sunshine Bakery</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
-  <div class="login-container">
-    <h1>Welcome to Sunshine Bakery Dashboard</h1>
-    <button class="google-button" onclick="startAuth()">Sign in with Google</button>
+  <div id="g_id_onload"
+       data-client_id="YOUR_GOOGLE_CLIENT_ID"
+       data-login_uri="/api/auth"
+       data-auto_prompt="false">
   </div>
-
-  <script>
-    function startAuth() {
-      const clientId = '1039601440969-6ca4vofk0c57p7hot5o759r5fcgvkfqe.apps.googleusercontent.com'; // Replace with your actual client ID
-      const redirectUri = window.location.origin + '/api/auth';
-      const scope = 'https://www.googleapis.com/auth/business.manage';
-      const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${encodeURIComponent(scope)}&access_type=offline&prompt=consent`;
-
-      window.location.href = authUrl;
-    }
-  </script>
+  <div class="g_id_signin"
+       data-type="standard"
+       data-size="large"
+       data-theme="outline"
+       data-text="sign_in_with"
+       data-shape="rectangular"
+       data-logo_alignment="left">
+  </div>
 </body>
 </html>
