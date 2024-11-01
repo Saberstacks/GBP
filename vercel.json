@@ -8,6 +8,10 @@
     {
       "src": "assets/**/*",
       "use": "@vercel/static"
+    },
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -16,14 +20,12 @@
       "dest": "/assets/$1"
     },
     {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/$1"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
     }
   ],
   "functions": {
