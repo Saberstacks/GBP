@@ -1,4 +1,29 @@
 /* assets/styles.css */
+/* Add these styles to your existing styles.css */
+
+/* Login Page Styles */
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.google-button {
+  display: inline-block;
+  background-color: #4285f4;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.google-button:hover {
+  background-color: #357ae8;
+}
+
 
 /* General Styles */
 body {
