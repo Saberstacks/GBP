@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
       const { tokens } = await oauth2Client.getToken(code);
       oauth2Client.setCredentials(tokens);
 
-      // Set tokens in secure HTTP-only cookies
+      // Set tokens in secure cookies
       res.setHeader('Set-Cookie', [
         cookie.serialize('access_token', tokens.access_token, {
           httpOnly: true,
@@ -31,8 +31,8 @@ module.exports = async (req, res) => {
           sameSite: 'lax',
           domain: 'gbp-index.vercel.app',
         }),
-        cookie.serialize('refresh_token', tokens.refresh_token, {
-          httpOnly: true,
+        cookie.serialize('auth', 'true', {
+          httpOnly: false, // Accessible to JavaScript
           secure: true,
           path: '/',
           sameSite: 'lax',
