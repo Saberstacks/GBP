@@ -1,6 +1,9 @@
 // assets/scripts.js
-// assets/scripts.js
+console.log('scripts.js loaded');
 
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM fully loaded and parsed');
+  // Your existing code
 document.addEventListener('DOMContentLoaded', async () => {
   // Check authentication
   if (!document.cookie.includes('token=')) {
