@@ -1,30 +1,51 @@
 // api/auth.js
-const { OAuth2Client } = require('google-auth-library');
-
-const client = new OAuth2Client('1039601440969-6ca4vofk0c57p7hot5o759r5fcgvkfqe.apps.googleusercontent.com');
+const { google } = require('googleapis');
+const querystring = require('querystring');
+const cookie = require('cookie');
 
 module.exports = async (req, res) => {
-  if (req.method === 'POST') {
-    const { credential } = req.body;
+  if (req.method === 'GET') {
+    const { code, state } = req.query;
 
-    if (!credential) {
-      return res.status(400).json({ error: 'Missing credential parameter' });
+    if (!code) {
+      res.status(400).send('Missing authorization code');
+      return;
     }
 
     try {
-      const ticket = await client.verifyIdToken({
-        idToken: credential,
-        audience: '1039601440969-6ca4vofk0c57p7hot5o759r5fcgvkfqe.apps.googleusercontent.com',
-      });
-      const payload = ticket.getPayload();
+      const oauth2Client = new google.auth.OAuth2(
+        '1039601440969-6ca4vofk0c57p7hot5o759r5fcgvkfqe.apps.googleusercontent.com',
+        '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',
+        'https://gbp-index.vercel.app/login.html'
+      );
 
-      // Send a success response with user information if needed
-      res.status(200).json({ success: true });
+      const { tokens } = await oauth2Client.getToken(code);
+      oauth2Client.setCredentials(tokens);
+
+      // Set tokens in a secure HTTP-only cookie
+      res.setHeader('Set-Cookie', [
+        cookie.serialize('access_token', tokens.access_token, {
+          httpOnly: true,
+          secure: true,
+          path: '/',
+          sameSite: 'lax',
+        }),
+        cookie.serialize('refresh_token', tokens.refresh_token, {
+          httpOnly: true,
+          secure: true,
+          path: '/',
+          sameSite: 'lax',
+        }),
+      ]);
+
+      // Redirect to the index page
+      res.writeHead(302, { Location: '/' });
+      res.end();
     } catch (error) {
-      console.error('Error verifying ID token:', error);
-      res.status(401).json({ error: 'Invalid ID token' });
+      console.error('Error exchanging authorization code:', error);
+      res.status(500).send('Authentication failed');
     }
   } else {
-    res.status(405).json({ error: 'Method not allowed' });
+    res.status(405).send('Method not allowed');
   }
 };
