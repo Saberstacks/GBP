@@ -18,12 +18,7 @@ module.exports = async (req, res) => {
       });
       const payload = ticket.getPayload();
 
-      // Optionally, you can check if the user is authorized to access your app
-      // For example, check if the user's email is in an allowed list
-
-      // Set a cookie to keep the user authenticated
-      res.setHeader('Set-Cookie', `token=${credential}; Path=/; HttpOnly; SameSite=Lax; Secure`);
-
+      // Send a success response with user information if needed
       res.status(200).json({ success: true });
     } catch (error) {
       console.error('Error verifying ID token:', error);
