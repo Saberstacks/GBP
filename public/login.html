@@ -4,44 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Login - Sunshine Bakery</title>
+  <!-- Google API Client Library -->
   <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <!-- Include the Google Platform Library -->
+  <script src="https://apis.google.com/js/api.js"></script>
   <script>
-    function handleCredentialResponse(response) {
-      // Send the ID token to the server for verification
-      fetch('/api/auth', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ credential: response.credential })
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          // Authentication successful, set a flag in localStorage
-          localStorage.setItem('authenticated', 'true');
-          // Redirect to index.html
-          window.location.href = '/';
-        } else {
-          // Handle errors
-          console.error('Authentication failed:', data.error);
-        }
-      })
-      .catch(error => console.error('Error:', error));
+    function onGoogleSignIn() {
+      google.accounts.oauth2.initCodeClient({
+        client_id: '1039601440969-6ca4vofk0c57p7hot5o759r5fcgvkfqe.apps.googleusercontent.com',
+        scope: 'openid email profile https://www.googleapis.com/auth/business.manage',
+        ux_mode: 'redirect',
+        redirect_uri: 'https://gbp-index.vercel.app/login.html',
+        state: 'login',
+      }).requestCode();
     }
   </script>
+  <style>
+    /* Center the button */
+    .signin-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+    }
+  </style>
 </head>
 <body>
-  <div id="g_id_onload"
-       data-client_id="1039601440969-6ca4vofk0c57p7hot5o759r5fcgvkfqe.apps.googleusercontent.com"
-       data-callback="handleCredentialResponse"
-       data-auto_prompt="false">
-  </div>
-  <div class="g_id_signin"
-       data-type="standard"
-       data-size="large"
-       data-theme="outline"
-       data-text="sign_in_with"
-       data-shape="rectangular"
-       data-logo_alignment="left">
+  <div class="signin-button">
+    <button onclick="onGoogleSignIn()">Sign in with Google</button>
   </div>
 </body>
 </html>
