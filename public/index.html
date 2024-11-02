@@ -15,12 +15,18 @@
 </head>
 <body>
 
-  <!-- Authentication Check Script -->
-<script>
-    if (localStorage.getItem('authenticated') !== 'true') {
+ <!-- Authentication Check Script -->
+  <script>
+    const isAuthenticated = localStorage.getItem('authenticated');
+    console.log('Authentication status:', isAuthenticated);
+    if (isAuthenticated !== 'true') {
+      console.log('User not authenticated. Redirecting to login.');
       window.location.href = '/login.html';
+    } else {
+      console.log('User is authenticated.');
     }
   </script>
+
 
   <!-- Dashboard Container -->
   <div class="dashboard-container">
