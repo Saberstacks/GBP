@@ -17,10 +17,10 @@
 
   <!-- Authentication Check Script -->
 <script>
-  if (!document.cookie.includes('token=')) {
-    window.location.href = '/login.html';
-  }
-</script>
+    if (localStorage.getItem('authenticated') !== 'true') {
+      window.location.href = '/login.html';
+    }
+  </script>
 
   <!-- Dashboard Container -->
   <div class="dashboard-container">
