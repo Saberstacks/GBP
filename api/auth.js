@@ -1,39 +1,35 @@
 // api/auth.js
+const { OAuth2Client } = require('google-auth-library');
 
-const { google } = require('googleapis');
-const cookie = require('cookie');
+const client = new OAuth2Client('1039601440969-6ca4vofk0c57p7hot5o759r5fcgvkfqe.apps.googleusercontent.com');
 
 module.exports = async (req, res) => {
-  const { query } = req;
-  const code = query.code;
+  if (req.method === 'POST') {
+    const { credential } = req.body;
 
-  if (!code) {
-    res.status(400).send('Missing code parameter');
-    return;
-  }
+    if (!credential) {
+      return res.status(400).json({ error: 'Missing credential parameter' });
+    }
 
-  const oauth2Client = new google.auth.OAuth2(
-    process.env.GOOGLE_CLIENT_ID,
-    process.env.GOOGLE_CLIENT_SECRET,
-    `${req.headers.origin}/api/auth`
-  );
+    try {
+      const ticket = await client.verifyIdToken({
+        idToken: credential,
+        audience: '1039601440969-6ca4vofk0c57p7hot5o759r5fcgvkfqe.apps.googleusercontent.com',
+      });
+      const payload = ticket.getPayload();
 
-  try {
-    const { tokens } = await oauth2Client.getToken(code);
+      // Optionally, you can check if the user is authorized to access your app
+      // For example, check if the user's email is in an allowed list
 
-    // Set the token in an HTTP-only cookie
-    res.setHeader('Set-Cookie', cookie.serialize('token', tokens.access_token, {
-      httpOnly: true,
-      secure: true,
-      maxAge: tokens.expires_in,
-      path: '/',
-    }));
+      // Set a cookie to keep the user authenticated
+      res.setHeader('Set-Cookie', `token=${credential}; Path=/; HttpOnly`);
 
-    // Redirect to the dashboard
-    res.writeHead(302, { Location: '/' });
-    res.end();
-  } catch (error) {
-    console.error('Error exchanging code for token:', error);
-    res.status(500).send('Authentication failed');
+      res.status(200).json({ success: true });
+    } catch (error) {
+      console.error('Error verifying ID token:', error);
+      res.status(401).json({ error: 'Invalid ID token' });
+    }
+  } else {
+    res.status(405).json({ error: 'Method not allowed' });
   }
 };
