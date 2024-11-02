@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
       // For example, check if the user's email is in an allowed list
 
       // Set a cookie to keep the user authenticated
-      res.setHeader('Set-Cookie', `token=${credential}; Path=/; HttpOnly`);
+      res.setHeader('Set-Cookie', `token=${credential}; Path=/; HttpOnly; SameSite=Lax; Secure`);
 
       res.status(200).json({ success: true });
     } catch (error) {
