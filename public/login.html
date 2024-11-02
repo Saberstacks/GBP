@@ -7,7 +7,7 @@
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <script>
     function handleCredentialResponse(response) {
-      // Send the ID token to the server
+      // Send the ID token to the server for verification
       fetch('/api/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -16,7 +16,9 @@
       .then(res => res.json())
       .then(data => {
         if (data.success) {
-          // Authentication successful, redirect to index.html
+          // Authentication successful, set a flag in localStorage
+          localStorage.setItem('authenticated', 'true');
+          // Redirect to index.html
           window.location.href = '/';
         } else {
           // Handle errors
