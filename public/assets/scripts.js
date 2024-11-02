@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           alert('An error occurred while fetching your business data.');
         }
-      } else if (data.message) {
+      } else if (data.noGbp) {
         // Handle case where no GBP is found
         document.getElementById('businessTitle').innerText = 'No Business Profile Found';
         document.getElementById('businessDescription').innerText = data.message;
@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update business info
         document.getElementById('businessTitle').innerText = location.title || 'Business Name';
-        document.getElementById('businessDescription').innerText = location.description || '';
+        document.getElementById('businessDescription').innerText = location.additionalCategories?.[0]?.displayName || '';
 
         // Update other elements as needed
         // For example:
         document.getElementById('displayBusinessName').innerText = location.title || '';
-        document.getElementById('displayFormattedAddress').innerText = location.address?.formattedAddress || '';
+        document.getElementById('displayFormattedAddress').innerText = location.storefrontAddress?.formattedAddress || '';
 
         // Continue updating the page with the GBP data
       }
