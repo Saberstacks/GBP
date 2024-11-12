@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       if (data.error) {
         console.error('Error:', data.error);
+        if (data.details) {
+          console.error('Details:', data.details);
+        }
         if (data.error === 'Unauthorized') {
           window.location.href = '/login.html';
         } else {
