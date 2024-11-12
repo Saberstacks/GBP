@@ -49,7 +49,6 @@ module.exports = async (req, res) => {
     const locationsResponse = await mybusinessbusinessinformation.accounts.locations.list({
       parent: accountName,
     });
-
     const locations = locationsResponse.data.locations;
 
     console.log('Locations:', locations);
@@ -62,6 +61,8 @@ module.exports = async (req, res) => {
     res.status(200).json({ locations });
   } catch (error) {
     console.error('Error fetching GBP data:', error);
+
+    // Return detailed error message for debugging (remove in production)
     res.status(500).json({ error: 'Failed to fetch GBP data', details: error.message });
   }
 };
