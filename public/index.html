@@ -1,520 +1,63 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sunshine Bakery - Dashboard Preview</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Material Design Lite CSS -->
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/assets/styles.css">
+    <meta charset="UTF-8">
+    <title>Local Business Connect - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM5gx5XlfmxfOvuS5pjAmW1vLvyjP3lUBN25bt1" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Custom Tailwind Config -->
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        /* Custom color for Google Blue */
+        @layer utilities {
+            .bg-google-blue {
+                background-color: #4285F4;
+            }
+            .text-google-blue {
+                color: #4285F4;
+            }
+            .hover\:bg-google-blue:hover {
+                background-color: #4285F4;
+            }
+            .border-google-blue {
+                border-color: #4285F4;
+            }
+        }
+    </style>
 </head>
-<body>
-
-<!-- Authentication Check Script -->
-  <script>
-    // Parse cookies
-    const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-      const [key, value] = cookie.trim().split('=');
-      acc[key] = value;
-      return acc;
-    }, {});
-
-    console.log('Cookies:', cookies); // Debugging
-
-    if (cookies.auth !== 'true') {
-      console.log('User not authenticated. Redirecting to login.');
-      window.location.href = '/login.html';
-    } else {
-      console.log('User is authenticated.');
-    }
-  </script>
-
-  <!-- Dashboard Container -->
-  <div class="dashboard-container">
-    <!-- Header Section -->
-    <div class="header-section">
-      <!-- Edit and Preview Buttons -->
-      <div class="mode-buttons">
-        <button id="previewButton" class="mode-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" disabled>Preview</button>
-        <button id="editButton" class="mode-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Edit</button>
-      </div>
-      <h1 class="business-title" id="businessTitle">Sunshine Bakery</h1>
-      <img src="/assets/placeholder.png" alt="Sunshine Bakery" class="header-image">
-      <div class="business-rating">
-        <span class="stars">
-          <i class="material-icons star">star</i>
-          <i class="material-icons star">star</i>
-          <i class="material-icons star">star</i>
-          <i class="material-icons star">star</i>
-          <i class="material-icons star_half">star_half</i>
-        </span>
-        <span class="rating-number">4.8</span>
-        <span class="review-count">(360)</span>
-      </div>
-      <div class="business-info-strip">
-        <span id="businessInfoStrip">Small business · $1–10 · Pastry shop</span>
-      </div>
-      <p class="business-description" id="businessDescription">
-        Sunshine Bakery offers fresh, homemade pastries, cakes, and seasonal treats. Enjoy a cozy atmosphere with locally sourced coffee and gluten-free options available.
-      </p>
-      <div class="profile-views">
-        <i class="material-icons">visibility</i> 1,280 profile views
-      </div>
+<body class="bg-google-blue flex items-center justify-center h-screen font-roboto">
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
+        <h1 class="text-2xl font-bold text-center mb-6 text-google-blue">Connect, Grow, and Collaborate with Local Businesses.</h1>
+        <form id="login-form">
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2" for="username">Business Name</label>
+                <input type="text" id="username" name="username" placeholder="Enter your business name" class="w-full p-3 border rounded border-gray-300 focus:outline-none focus:border-google-blue">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2" for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" class="w-full p-3 border rounded border-gray-300 focus:outline-none focus:border-google-blue">
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 mb-2" for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" class="w-full p-3 border rounded border-gray-300 focus:outline-none focus:border-google-blue">
+            </div>
+            <div class="flex justify-between">
+                <button type="submit" id="login-button" class="bg-google-blue text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Login</button>
+                <button type="submit" id="create-account-button" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">Create Account</button>
+            </div>
+        </form>
     </div>
-
-    <!-- Action Buttons -->
-    <div class="action-buttons">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-        Directions
-      </button>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-        Share
-      </button>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-        Call
-      </button>
-    </div>
-
-    <!-- Tabs -->
-    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-      <div class="mdl-tabs__tab-bar">
-        <a href="#overview-panel" class="mdl-tabs__tab is-active">Overview</a>
-        <a href="#location-panel" class="mdl-tabs__tab">Location</a>
-        <a href="#contact-panel" class="mdl-tabs__tab">Contact</a>
-        <a href="#hours-panel" class="mdl-tabs__tab">Hours</a>
-        <a href="#offers-panel" class="mdl-tabs__tab">Offers</a>
-        <a href="#products-panel" class="mdl-tabs__tab">Products</a>
-        <a href="#photos-panel" class="mdl-tabs__tab">Photos</a>
-        <a href="#reviews-panel" class="mdl-tabs__tab">Reviews</a>
-        <a href="#qa-panel" class="mdl-tabs__tab">Q&A</a>
-        <a href="#posts-panel" class="mdl-tabs__tab">Posts</a>
-        <a href="#insights-panel" class="mdl-tabs__tab">Insights</a>
-      </div>
-
-      <!-- Overview Panel -->
-      <div class="mdl-tabs__panel is-active" id="overview-panel">
-        <div class="content-section">
-          <h4>Business Overview</h4>
-          <!-- Display Section -->
-          <div id="overviewDisplay">
-            <p><strong>Business Name:</strong> <span id="displayBusinessName">Sunshine Bakery</span></p>
-            <p><strong>Business Type:</strong> <span id="displayBusinessType">Bakery</span></p>
-            <p><strong>Categories:</strong> <span id="displayCategories">Bakery, Cafe, Dessert Shop</span></p>
-            <p><strong>Description:</strong> <span id="displayDescription">Sunshine Bakery offers fresh, homemade pastries, cakes, and seasonal treats. Enjoy a cozy atmosphere with locally sourced coffee and gluten-free options available.</span></p>
-            <p><strong>Status:</strong> <span id="displayStatus">Open</span></p>
-            <p><strong>Business Opened On:</strong> <span id="displayOpenedOn">2010-05-14</span></p>
-          </div>
-          <!-- Edit Section -->
-          <div id="overviewEdit" style="display: none;">
-            <div class="field-group">
-              <label for="editBusinessName">Business Name:</label>
-              <input type="text" id="editBusinessName">
-            </div>
-            <div class="field-group">
-              <label for="editBusinessType">Business Type:</label>
-              <input type="text" id="editBusinessType">
-            </div>
-            <div class="field-group">
-              <label for="editCategories">Categories:</label>
-              <input type="text" id="editCategories">
-            </div>
-            <div class="field-group">
-              <label for="editDescription">Description:</label>
-              <textarea id="editDescription"></textarea>
-            </div>
-            <div class="field-group">
-              <label for="editStatus">Status:</label>
-              <input type="text" id="editStatus">
-            </div>
-            <div class="field-group">
-              <label for="editOpenedOn">Business Opened On:</label>
-              <input type="date" id="editOpenedOn">
-            </div>
-            <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="updateOverview()">
-              Update
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Location Panel -->
-      <div class="mdl-tabs__panel" id="location-panel">
-        <div class="content-section">
-          <h4>Location Details</h4>
-          <!-- Display Section -->
-          <div id="locationDisplay">
-            <p><strong>Formatted Address:</strong> <span id="displayFormattedAddress">123 Main St, Springfield, IL 62701, USA</span></p>
-            <p><strong>Street Address:</strong> <span id="displayStreetAddress">123 Main St</span></p>
-            <p><strong>City:</strong> <span id="displayCity">Springfield</span></p>
-            <p><strong>State:</strong> <span id="displayState">IL</span></p>
-            <p><strong>Postal Code:</strong> <span id="displayPostalCode">62701</span></p>
-            <p><strong>Country:</strong> <span id="displayCountry">USA</span></p>
-            <p><strong>Latitude:</strong> <span id="displayLatitude">39.7817</span></p>
-            <p><strong>Longitude:</strong> <span id="displayLongitude">-89.6501</span></p>
-            <p><strong>Service Areas:</strong> <span id="displayServiceAreas">Springfield, IL; Chatham, IL; Decatur, IL</span></p>
-          </div>
-          <!-- Edit Section -->
-          <div id="locationEdit" style="display: none;">
-            <div class="field-group">
-              <label for="editFormattedAddress">Formatted Address:</label>
-              <input type="text" id="editFormattedAddress">
-            </div>
-            <div class="field-group">
-              <label for="editStreetAddress">Street Address:</label>
-              <input type="text" id="editStreetAddress">
-            </div>
-            <div class="field-group">
-              <label for="editCity">City:</label>
-              <input type="text" id="editCity">
-            </div>
-            <div class="field-group">
-              <label for="editState">State:</label>
-              <input type="text" id="editState">
-            </div>
-            <div class="field-group">
-              <label for="editPostalCode">Postal Code:</label>
-              <input type="text" id="editPostalCode">
-            </div>
-            <div class="field-group">
-              <label for="editCountry">Country:</label>
-              <input type="text" id="editCountry">
-            </div>
-            <div class="field-group">
-              <label for="editLatitude">Latitude:</label>
-              <input type="text" id="editLatitude">
-            </div>
-            <div class="field-group">
-              <label for="editLongitude">Longitude:</label>
-              <input type="text" id="editLongitude">
-            </div>
-            <div class="field-group">
-              <label for="editServiceAreas">Service Areas:</label>
-              <input type="text" id="editServiceAreas">
-            </div>
-            <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="updateLocation()">
-              Update
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact Panel -->
-      <div class="mdl-tabs__panel" id="contact-panel">
-        <div class="content-section">
-          <h4>Contact Information</h4>
-          <!-- Display Section -->
-          <div id="contactDisplay">
-            <p><strong>Phone Number:</strong> <a href="#" id="displayPhoneNumber">+1 217-555-1234</a></p>
-            <p><strong>Website:</strong> <a href="#" id="displayWebsite">www.sunshinebakery.com</a></p>
-            <p><strong>Email:</strong> <a href="#" id="displayEmail">info@sunshinebakery.com</a></p>
-            <p><strong>Booking Link:</strong> <a href="#" id="displayBookingLink">Book a Reservation</a></p>
-          </div>
-          <!-- Edit Section -->
-          <div id="contactEdit" style="display: none;">
-            <div class="field-group">
-              <label for="editPhoneNumber">Phone Number:</label>
-              <input type="text" id="editPhoneNumber">
-            </div>
-            <div class="field-group">
-              <label for="editWebsite">Website:</label>
-              <input type="text" id="editWebsite">
-            </div>
-            <div class="field-group">
-              <label for="editEmail">Email:</label>
-              <input type="email" id="editEmail">
-            </div>
-            <div class="field-group">
-              <label for="editBookingLink">Booking Link:</label>
-              <input type="text" id="editBookingLink">
-            </div>
-            <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="updateContact()">
-              Update
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hours Panel -->
-      <div class="mdl-tabs__panel" id="hours-panel">
-        <div class="content-section">
-          <h4>Operating Hours</h4>
-          <!-- Display Section -->
-          <div id="hoursDisplay">
-            <table>
-              <tr><td>Monday - Thursday:</td><td id="displayMonThu">07:00 - 18:00</td></tr>
-              <tr><td>Friday:</td><td id="displayFriday">07:00 - 20:00</td></tr>
-              <tr><td>Saturday:</td><td id="displaySaturday">08:00 - 16:00</td></tr>
-              <tr><td>Sunday:</td><td id="displaySunday">Closed</td></tr>
-            </table>
-            <h4>Holiday Hours</h4>
-            <table>
-              <tr><td>Thanksgiving:</td><td id="displayThanksgiving">08:00 - 14:00</td></tr>
-              <tr><td>Christmas:</td><td id="displayChristmas">Closed</td></tr>
-            </table>
-          </div>
-          <!-- Edit Section -->
-          <div id="hoursEdit" style="display: none;">
-            <h4>Operating Hours</h4>
-            <div class="field-group">
-              <label for="editMonThu">Monday - Thursday:</label>
-              <input type="text" id="editMonThu">
-            </div>
-            <div class="field-group">
-              <label for="editFriday">Friday:</label>
-              <input type="text" id="editFriday">
-            </div>
-            <div class="field-group">
-              <label for="editSaturday">Saturday:</label>
-              <input type="text" id="editSaturday">
-            </div>
-            <div class="field-group">
-              <label for="editSunday">Sunday:</label>
-              <input type="text" id="editSunday">
-            </div>
-            <h4>Holiday Hours</h4>
-            <div class="field-group">
-              <label for="editThanksgiving">Thanksgiving:</label>
-              <input type="text" id="editThanksgiving">
-            </div>
-            <div class="field-group">
-              <label for="editChristmas">Christmas:</label>
-              <input type="text" id="editChristmas">
-            </div>
-            <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="updateHours()">
-              Update
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Offers Panel -->
-      <div class="mdl-tabs__panel" id="offers-panel">
-        <div class="content-section">
-          <h4>Current Offers</h4>
-          <!-- Display Section -->
-          <div id="offersDisplay">
-            <ul id="displayOffers">
-              <li>Buy One Get One Free on select pastries (valid until 2024-11-01)</li>
-              <li>20% off coffee for students (valid until 2024-12-31)</li>
-            </ul>
-          </div>
-          <!-- Edit Section -->
-          <div id="offersEdit" style="display: none;">
-            <div class="field-group">
-              <label for="editOffers">Offers (one per line):</label>
-              <textarea id="editOffers" rows="4"></textarea>
-            </div>
-            <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="updateOffers()">
-              Update
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Products Panel -->
-      <div class="mdl-tabs__panel" id="products-panel">
-        <div class="content-section">
-          <h4>Products and Services</h4>
-          <!-- Display Section -->
-          <div id="productsDisplay">
-            <ul id="displayProducts">
-              <li>Chocolate Croissant: $3.50 USD</li>
-              <li>Pumpkin Spice Latte (Limited): $5.00 USD</li>
-            </ul>
-            <h4>Attributes</h4>
-            <ul id="displayAttributes">
-              <li>Wheelchair Accessible: Yes</li>
-              <li>Family Friendly: Yes</li>
-              <li>Pet Friendly: No</li>
-              <li>Payment Options: Cash, Credit Card, Mobile Payment</li>
-              <li>Delivery: Yes</li>
-              <li>Online Orders: Yes</li>
-            </ul>
-          </div>
-          <!-- Edit Section -->
-          <div id="productsEdit" style="display: none;">
-            <div class="field-group">
-              <label for="editProducts">Products (one per line):</label>
-              <textarea id="editProducts" rows="4"></textarea>
-            </div>
-            <h4>Attributes</h4>
-            <div class="field-group">
-              <label for="editAttributes">Attributes (one per line):</label>
-              <textarea id="editAttributes" rows="4"></textarea>
-            </div>
-            <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="updateProducts()">
-              Update
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Photos Panel -->
-      <div class="mdl-tabs__panel" id="photos-panel">
-        <div class="content-section">
-          <h4>Photos and Media</h4>
-          <div class="photos-gallery" id="photosDisplay">
-            <img src="/assets/placeholder.png" alt="Front View">
-            <img src="/assets/placeholder.png" alt="Interior">
-            <!-- Add more images as needed -->
-          </div>
-          <!-- Edit Section -->
-          <!-- Photos editing functionality would require file uploads, which is beyond the scope of this implementation -->
-        </div>
-      </div>
-
-      <!-- Reviews Panel -->
-      <div class="mdl-tabs__panel" id="reviews-panel">
-        <div class="content-section">
-          <h4>Reviews and Ratings</h4>
-          <!-- Display Section -->
-          <div id="reviewsDisplay">
-            <div class="review">
-              <p><strong>John Doe</strong> - 5 stars</p>
-              <p>"Amazing pastries!"</p>
-            </div>
-            <div class="review">
-              <p><strong>Jane Smith</strong> - 3 stars</p>
-              <p>"Coffee was okay but overpriced."</p>
-            </div>
-            <!-- Add more reviews as needed -->
-          </div>
-          <!-- Edit Section -->
-          <div id="reviewsEdit" style="display: none;">
-            <div class="field-group">
-              <label for="editReviews">Reviews (format: Name - Rating - "Comment", one per line):</label>
-              <textarea id="editReviews" rows="6"></textarea>
-            </div>
-            <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="updateReviews()">
-              Update
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Q&A Panel -->
-      <div class="mdl-tabs__panel" id="qa-panel">
-        <div class="content-section">
-          <h4>Questions & Answers</h4>
-          <!-- Display Section -->
-          <div id="qaDisplay">
-            <div class="qa-item">
-              <p><strong>Q:</strong> Gluten-free options?</p>
-              <p><strong>A:</strong> Yes</p>
-            </div>
-            <div class="qa-item">
-              <p><strong>Q:</strong> Outdoor seating?</p>
-              <p><strong>A:</strong> Yes</p>
-            </div>
-            <!-- Add more Q&A as needed -->
-          </div>
-          <!-- Edit Section -->
-          <div id="qaEdit" style="display: none;">
-            <div class="field-group">
-              <label for="editQA">Q&A (format: Q: Question A: Answer, one per line):</label>
-              <textarea id="editQA" rows="6"></textarea>
-            </div>
-            <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="updateQA()">
-              Update
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Posts Panel -->
-      <div class="mdl-tabs__panel" id="posts-panel">
-        <div class="content-section">
-          <h4>Posts and Updates</h4>
-          <!-- Display Section -->
-          <div id="postsDisplay">
-            <div class="post-item">
-              <p><strong>"Pumpkin spice is back!"</strong> (Valid until 2024-11-01)</p>
-            </div>
-            <div class="post-item">
-              <p><strong>"Live music this Friday evening!"</strong> (Expired 2024-10-27)</p>
-            </div>
-            <!-- Add more posts as needed -->
-          </div>
-          <!-- Edit Section -->
-          <div id="postsEdit" style="display: none;">
-            <div class="field-group">
-              <label for="editPosts">Posts (one per line):</label>
-              <textarea id="editPosts" rows="6"></textarea>
-            </div>
-            <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="updatePosts()">
-              Update
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Insights Panel -->
-      <div class="mdl-tabs__panel" id="insights-panel">
-        <div class="content-section">
-          <h4>Insights and Analytics</h4>
-          <!-- Display Section -->
-          <div id="insightsDisplay">
-            <ul>
-              <li>Views (last 30 days): <span id="displayViews">1,450</span></li>
-              <li>Direct Queries: <span id="displayDirectQueries">500</span></li>
-              <li>Discovery Queries: <span id="displayDiscoveryQueries">850</span></li>
-              <li>Branded Queries: <span id="displayBrandedQueries">100</span></li>
-              <li>Website Visits: <span id="displayWebsiteVisits">300</span></li>
-              <li>Phone Calls: <span id="displayPhoneCalls">45</span></li>
-              <li>Request Directions: <span id="displayRequestDirections">120</span></li>
-            </ul>
-          </div>
-          <!-- Edit Section -->
-          <div id="insightsEdit" style="display: none;">
-            <div class="field-group">
-              <label for="editViews">Views (last 30 days):</label>
-              <input type="number" id="editViews">
-            </div>
-            <div class="field-group">
-              <label for="editDirectQueries">Direct Queries:</label>
-              <input type="number" id="editDirectQueries">
-            </div>
-            <div class="field-group">
-              <label for="editDiscoveryQueries">Discovery Queries:</label>
-              <input type="number" id="editDiscoveryQueries">
-            </div>
-            <div class="field-group">
-              <label for="editBrandedQueries">Branded Queries:</label>
-              <input type="number" id="editBrandedQueries">
-            </div>
-            <div class="field-group">
-              <label for="editWebsiteVisits">Website Visits:</label>
-              <input type="number" id="editWebsiteVisits">
-            </div>
-            <div class="field-group">
-              <label for="editPhoneCalls">Phone Calls:</label>
-              <input type="number" id="editPhoneCalls">
-            </div>
-            <div class="field-group">
-              <label for="editRequestDirections">Request Directions:</label>
-              <input type="number" id="editRequestDirections">
-            </div>
-            <button class="update-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="updateInsights()">
-              Update
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="footer">
-        <p>&copy; 2024 Sunshine Bakery</p>
-      </div>
-    </div>
-
-    <!-- Material Design Lite JS -->
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <!-- Include scripts.js -->
-  <script src="/assets/scripts.js"></script>
-  </body>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
 </html>
